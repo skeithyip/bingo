@@ -1,93 +1,149 @@
 .container {
-  display: flex;
-  padding: 8px;
+  display: grid;
+  grid-template-columns: 1fr min-content 1fr;
+  grid-template-areas: 'left board right';
+  padding: 16px;
   gap: 16px;
   align-items: flex-start;
   height: 100vh;
   scroll-snap-align: start;
-  position: relative;
 
-  .bingo {
-    display: grid;
-    grid-template-columns: repeat(5, 10vw);
-    grid-auto-rows: 1fr;
-    gap: 2px;
-    background-color: black;
-    border: 2px solid black;
+  .right,
+  .left {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    .item {
+      padding: 16px;
+      cursor: pointer;
+      border-radius: 8px;
+      min-width: 200px;
+
+      &:hover {
+        background-color: lightgoldenrodyellow;
+      }
+    }
+  }
+
+  .left {
+    grid-area: left;
+    place-self: center start;
+  }
+
+  .right {
+    grid-area: right;
+    place-self: center end;
+  }
+
+  fieldset {
     border-radius: 8px;
 
-    .bingoItem {
-      aspect-ratio: 1;
-      background-color: white;
+    legend {
+      margin-left: 10px;
+      padding: 0 8px;
+    }
+  }
+
+  .center {
+    grid-area: board;
+    place-self: start center;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    position: relative;
+
+    .control {
       display: flex;
       align-items: center;
-      justify-content: center;
-      padding: 16px;
-      text-wrap: pretty;
-      text-align: center;
-      overflow: hidden;
-      transition: all 200ms;
+      gap: 16px;
+      padding: 0 16px;
 
-      &.called {
-        background-color: #e5e5f7;
-        // opacity: 0.8;
-        // color: white;
-        background-size: 10px 10px;
-        background-image: repeating-linear-gradient(
-          45deg,
-          #444cf7 0,
-          #444cf7 1px,
-          #e5e5f7 0,
-          #e5e5f7 50%
-        );
+      label {
+        display: flex;
+        gap: 8px;
       }
 
-      &:first-child {
-        border-top-left-radius: 6px;
-      }
-      &:nth-child(5) {
-        border-top-right-radius: 6px;
-      }
-      &:nth-child(21) {
-        border-bottom-left-radius: 6px;
-      }
-      &:last-child {
-        border-bottom-right-radius: 6px;
-      }
-
-      select {
-        width: 100%;
+      .clearBtn {
+        margin-left: auto;
       }
     }
-  }
 
-  .control {
-    label {
-      display: flex;
-      gap: 8px;
+    .text {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%) rotate(-45deg);
+      left: 10vw;
+      // right: 0;
+      margin-inline: auto;
+      margin-block: auto;
+      width: fit-content;
+      font-size: 10vw;
+      opacity: 0.1;
+      display: none;
+      pointer-events: none;
+
+      &.locked {
+        display: block;
+      }
     }
 
-    .clearBtn {
-      margin-top: 20vh;
-    }
-  }
+    .bingo {
+      display: grid;
+      grid-template-columns: repeat(5, 10vw);
+      grid-auto-rows: 1fr;
+      gap: 2px;
+      background-color: black;
+      border: 2px solid black;
+      border-radius: 8px;
 
-  .text {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%) rotate(-45deg);
-    left: 10vw;
-    // right: 0;
-    margin-inline: auto;
-    margin-block: auto;
-    width: fit-content;
-    font-size: 10vw;
-    opacity: 0.1;
-    display: none;
-    pointer-events: none;
+      .bingoItem {
+        aspect-ratio: 1;
+        background-color: white;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 16px;
+        text-wrap: pretty;
+        text-align: center;
+        overflow: hidden;
+        transition: all 200ms;
 
-    &.locked {
-      display: block;
+        &[data-dragover='true'] {
+          background-color: goldenrod;
+        }
+
+        &.called {
+          background-color: #e5e5f7;
+          // opacity: 0.8;
+          // color: white;
+          background-size: 10px 10px;
+          background-image: repeating-linear-gradient(
+            45deg,
+            #444cf7 0,
+            #444cf7 1px,
+            #e5e5f7 0,
+            #e5e5f7 50%
+          );
+        }
+
+        &:first-child {
+          border-top-left-radius: 6px;
+        }
+        &:nth-child(5) {
+          border-top-right-radius: 6px;
+        }
+        &:nth-child(21) {
+          border-bottom-left-radius: 6px;
+        }
+        &:last-child {
+          border-bottom-right-radius: 6px;
+        }
+
+        select {
+          width: 100%;
+        }
+      }
     }
   }
 
