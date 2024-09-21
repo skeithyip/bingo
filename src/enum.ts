@@ -60,3 +60,5 @@ export const sweets: Item[] = [
   'Tic tac',
   'Mentos',
 ];
+
+export const drinks: Item[] = [];

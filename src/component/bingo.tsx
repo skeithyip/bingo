@@ -77,9 +77,9 @@ type LeftSideProps = {
 const LeftSide = (props: LeftSideProps) => {
   return (
     <div className={styles.left}>
-      <GroupItem {...props} group={sweets} title="Sweets" />
-      <GroupItem {...props} group={savouries} title="Savouries" />
-      <GroupItem {...props} group={icecreams} title="Ice Creams" />
+      <GroupItem {...props} group={sweets} title="Sweets 🍬" />
+      <GroupItem {...props} group={savouries} title="Savouries 😋" />
+      <GroupItem {...props} group={icecreams} title="Ice Creams 🍦" />
     </div>
   );
 };

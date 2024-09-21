@@ -38,7 +38,7 @@ export const MainControl = (props: MainControlProps) => {
     setLastResult(undefined);
   };
 
-  const onMouseDown = () => {
+  const onPointerDown = () => {
     if (remaining.length) {
       if (intervalRef.current) {
         return;
@@ -51,7 +51,7 @@ export const MainControl = (props: MainControlProps) => {
     }
   };
 
-  const onMouseUp = () => {
+  const onPointerUp = () => {
     if (intervalRef.current) {
       clearInterval(intervalRef.current);
       intervalRef.current = null;
@@ -75,9 +75,9 @@ export const MainControl = (props: MainControlProps) => {
         <div className={styles.dice}>
           <span
             className={styles.rollBtn}
-            onMouseDown={onMouseDown}
-            onMouseUp={onMouseUp}
-            onMouseLeave={onMouseUp}
+            onPointerDown={onPointerDown}
+            onPointerUp={onPointerUp}
+            onPointerLeave={onPointerUp}
           >
             ROLL
           </span>

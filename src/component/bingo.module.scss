@@ -18,7 +18,8 @@
       padding: 16px;
       cursor: pointer;
       border-radius: 8px;
-      min-width: 200px;
+      min-width: 250px;
+      transition: all 200ms;
 
       &:hover {
         background-color: lightgoldenrodyellow;
