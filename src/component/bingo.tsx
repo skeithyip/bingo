@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import styles from './bingo.module.scss';
-import { icecreams, Item, savouries, snacks, sweets } from '../enum';
+import { drinks, icecreams, Item, savouries, snacks, sweets } from '../enum';
 import clsx from 'clsx';
 
 type ItemExtended = Item | '-';
@@ -77,8 +77,8 @@ type LeftSideProps = {
 const LeftSide = (props: LeftSideProps) => {
   return (
     <div className={styles.left}>
+      <GroupItem {...props} group={drinks} title="Drinks ☕" />
       <GroupItem {...props} group={sweets} title="Sweets 🍬" />
-      <GroupItem {...props} group={savouries} title="Savouries 😋" />
       <GroupItem {...props} group={icecreams} title="Ice Creams 🍦" />
     </div>
   );
@@ -87,6 +87,7 @@ const LeftSide = (props: LeftSideProps) => {
 const RightSide = (props: LeftSideProps) => {
   return (
     <div className={styles.right}>
+      <GroupItem {...props} group={savouries} title="Savouries 😋" />
       <GroupItem {...props} group={snacks} title="Snacks" />
     </div>
   );

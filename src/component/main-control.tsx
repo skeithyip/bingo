@@ -98,7 +98,7 @@ export const MainControl = (props: MainControlProps) => {
               )
             }
           >
-            {remaining.map((e) => {
+            {remaining.toSorted().map((e) => {
               return (
                 <option key={e} value={e}>
                   {e}
