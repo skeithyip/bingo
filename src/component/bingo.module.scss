@@ -83,6 +83,7 @@
       opacity: 0.1;
       display: none;
       pointer-events: none;
+      text-wrap: balance;
 
       &.locked {
         display: block;

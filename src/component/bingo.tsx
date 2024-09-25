@@ -1,7 +1,7 @@
 import * as React from 'react';
 
 import styles from './bingo.module.scss';
-import { drinks, icecreams, Item, savouries, snacks, sweets } from '../enum';
+import { drinks, icecreams, Item, snacks, sweets } from '../enum';
 import clsx from 'clsx';
 
 type ItemExtended = Item | '-';
@@ -77,9 +77,13 @@ type LeftSideProps = {
 const LeftSide = (props: LeftSideProps) => {
   return (
     <div className={styles.left}>
-      <GroupItem {...props} group={drinks} title="Drinks ☕" />
-      <GroupItem {...props} group={sweets} title="Sweets 🍬" />
-      <GroupItem {...props} group={icecreams} title="Ice Creams 🍦" />
+      <GroupItem {...props} group={drinks.toSorted()} title="Drinks 🥤" />
+      <GroupItem {...props} group={sweets.toSorted()} title="Sweets 🍬" />
+      <GroupItem
+        {...props}
+        group={icecreams.toSorted()}
+        title="Ice Creams 🍦"
+      />
     </div>
   );
 };
@@ -87,8 +91,7 @@ const LeftSide = (props: LeftSideProps) => {
 const RightSide = (props: LeftSideProps) => {
   return (
     <div className={styles.right}>
-      <GroupItem {...props} group={savouries} title="Savouries 😋" />
-      <GroupItem {...props} group={snacks} title="Snacks" />
+      <GroupItem {...props} group={snacks.toSorted()} title="Snacks 🍿" />
     </div>
   );
 };
@@ -230,7 +233,7 @@ const getFontSize = (textLength: number | undefined) => {
   }
 
   if (textLength < 9) {
-    return `${3}vw`;
+    return `${2.5}vw`;
   }
 
   if (textLength >= baseSize) {
