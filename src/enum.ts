@@ -48,7 +48,7 @@ export const items = [
   'Kopiko',
   'Chewing Gum',
 
-  // 'Mentos Sour', // (Buy 1)
+  'Mentos Sour', // (Buy 1)
   // 'Natural Sour Chews', // (Buy 1)
 
   // Drinks (5)
@@ -95,6 +95,7 @@ export const sweets: Item[] = [
   'Hacks',
   'Kopiko',
   'Chewing Gum',
+  'Mentos Sour',
 ];
 
 export const drinks: Item[] = [
