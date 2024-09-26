@@ -53,11 +53,11 @@ export const items = [
 
   // Drinks (5)
   'Banana Milk',
-
+  'Ribena Light',
   'Green tea', // 6x (Buy 2)
-  'Ice lemon tea', // 6x (Buy 2)
+  'Vitagen',
   'Milo', // 6x (Buy 2)
-  'Orange juice', // 6x (Buy 2)
+  'Coke', // 6x (Buy 2)
 
   // 'Coke mini', // 6x
 
@@ -68,7 +68,6 @@ export type Item = (typeof items)[number];
 
 export const icecreams: Item[] = [
   'Cornetto mini', // 12x
-  'Kit Kat Mini', // 6x
 ];
 
 export const snacks: Item[] = [
@@ -101,7 +100,8 @@ export const sweets: Item[] = [
 export const drinks: Item[] = [
   'Banana Milk',
   'Green tea', // 6x (Buy 2)
-  'Ice lemon tea', // 6x (Buy 2)
+  'Vitagen', // 6x (Buy 2)
   'Milo', // 6x (Buy 2)
-  'Orange juice', // 6x (Buy 2)
+  'Coke', // 6x (Buy 2)
+  'Ribena Light',
 ];
