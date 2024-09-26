@@ -30,6 +30,7 @@ export const items = [
   'Tiramisu',
   'Waffer',
   'Haw Flake',
+  'Oreo',
 
   // 'Ferrero Rocher', // Is this halal?
   // 'Kit kat Dark Borneo', // (Buy 1)
@@ -86,6 +87,7 @@ export const snacks: Item[] = [
   'Tiramisu',
   'Waffer',
   'Haw Flake',
+  'Oreo',
 ];
 
 export const sweets: Item[] = [
