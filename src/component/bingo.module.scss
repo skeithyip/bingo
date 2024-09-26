@@ -13,6 +13,8 @@
     display: flex;
     flex-direction: column;
     gap: 16px;
+    max-height: 100%;
+    overflow: hidden;
 
     .item {
       padding: 16px;
@@ -39,6 +41,8 @@
 
   fieldset {
     border-radius: 8px;
+    overflow: scroll;
+    max-height: 95vh;
 
     legend {
       margin-left: 10px;
